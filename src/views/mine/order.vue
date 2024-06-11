@@ -2,6 +2,7 @@
 import { reactive, ref } from 'vue'
 import { userInfoStore } from '../../stores/user.js'
 import { useRouter } from 'vue-router'
+console.log('page')
 const router = useRouter()
 const value1 = ref(0);
 const value2 = ref('a');

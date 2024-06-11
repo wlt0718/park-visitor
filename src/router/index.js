@@ -93,8 +93,9 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes,
 });
-router.beforeEach((to, from, next) =>{
+// 全局后置钩子设置标题
+router.afterEach((to, from) => {
     document.title = to.meta.title || '默认标题'
-    next()
+    console.log('aftereach')
 })
 export default router
