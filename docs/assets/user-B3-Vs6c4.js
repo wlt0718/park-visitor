@@ -1,1 +1,0 @@
-import{aX as o}from"./index-BurNYFqW.js";const i=o("userInfoStore",{state:()=>({mobile:"",name:"",login:!1,route:""}),actions:{SET_mobile(e){this.mobile=e},SET_login(e){this.login=e},SET_name(e){this.name=e},SET_route(e){this.route=e}}});export{i as u};
