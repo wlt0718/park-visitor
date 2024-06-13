@@ -176,7 +176,7 @@ if(type === 'g') {
       <label for="mobile" class="from-label">
         导游
       </label>
-      <input id="mobile" class="from-input" type="text" max="11" placeholder="请输入导游姓名" v-model="guide.name" :readonly="guide.read"/>
+      <input id="mobile" class="from-input" type="text" max="11" placeholder="请输入(选填)" v-model="guide.name" :readonly="guide.read"/>
     </div>
   </div>
   <div class="person" v-if="infoStore.login">
