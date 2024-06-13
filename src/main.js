@@ -5,7 +5,7 @@ import App from './App.vue'
 import 'vant/es/toast/style'
 import 'vant/es/dialog/style'
 import router from './router'
-import './router/permission'
+// import './router/permission'
 import pinia from './stores'
 
 import { GlobalComponents } from './components'

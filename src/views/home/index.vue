@@ -10,9 +10,13 @@ function sticky(value){
   stickyIstop.value = value.isFixed
 }
 
-function toMerchantInfo(){
+function toMerchantInfo(id){
   router.push({
-    name: 'merchantInfo'
+    path: '/merchantInfo',
+    query: {
+      type: 'a',
+      merchant: id
+    }
   })
 }
 </script>
@@ -49,15 +53,12 @@ function toMerchantInfo(){
           <van-search v-model="searchValue" placeholder="请输入游玩商家" />
         </div>
         <div class="tab">
-          <span :class="tabActive === 0 ? 'active':''" @click="tabActive = 0">全部</span>
-          <span :class="tabActive === 1 ? 'active':''" @click="tabActive = 1">好评优先</span>
-          <span :class="tabActive === 2 ? 'active':''" @click="tabActive = 2">备用二</span>
-          <span :class="tabActive === 3 ? 'active':''" @click="tabActive = 3">备用三</span>
+          <span :class="tabActive === 0 ? 'active':''" @click="tabActive = 0">全部商家</span>
         </div>
       </div>
     </van-sticky>
     <div class="merchant-list">
-      <div class="merchant-item" @click="toMerchantInfo">
+      <div class="merchant-item" @click="toMerchantInfo(0)">
         <div class="item-content">
           <img src="../../assets/jpg/dsn.jpg" alt="" />
           <div class="info">
@@ -75,232 +76,147 @@ function toMerchantInfo(){
             <div class="item-pro">
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">迪士尼游艇</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
+                  <span class="newamt sp">￥100</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">加勒比海盗</div>
+                <div class="names">迪士尼摩天轮</div>
                 <div>
-                  <span class="newamt sp">￥40.50</span>
+                  <span class="newamt sp">￥80</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">天地双雄</div>
                 <div>
                   <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
+                  <!-- <span class="oldamt">30.00</span> -->
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">恐龙乐园</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
+                  <span class="newamt sp">￥120</span>
+                  <!-- <span class="oldamt">30.00</span> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="merchant-item">
+      <div class="merchant-item" @click="toMerchantInfo(1)">
         <div class="item-content">
           <img src="../../assets/jpg/dsn.jpg" alt="" />
           <div class="info">
-            <div class="name">上海迪士尼</div>
+            <div class="name">上海共青森林公园</div>
             <div class="score">
               <van-icon name="star" />
-              <span class="num">4.9</span>
-              <span class="month">月玩人次 1000+</span>
+              <span class="num">5.0</span>
+              <span class="month">月玩人次 100+</span>
             </div>
             <div class="tag">
-              <van-tag type="danger" >米奇</van-tag>
-              <van-tag type="danger" >年轻人</van-tag>
-              <van-tag type="danger" >标签三</van-tag>
+              <van-tag type="danger" >休闲</van-tag>
+              <van-tag type="danger" >轻松</van-tag>
             </div>
             <div class="item-pro">
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">小鲤鱼历险记</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
+                  <span class="newamt sp">￥20</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">加勒比海盗</div>
+                <div class="names">4D空间</div>
                 <div>
-                  <span class="newamt sp">￥40.50</span>
+                  <span class="newamt sp">￥40</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">摩天轮</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
+                  <span class="newamt sp">￥200</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="merchant-item">
+      <div class="merchant-item" @click="toMerchantInfo(2)">
         <div class="item-content">
           <img src="../../assets/jpg/dsn.jpg" alt="" />
           <div class="info">
-            <div class="name">上海迪士尼</div>
+            <div class="name">杭州西湖</div>
             <div class="score">
               <van-icon name="star" />
-              <span class="num">4.9</span>
-              <span class="month">月玩人次 1000+</span>
+              <span class="num">4.8</span>
+              <span class="month">月玩人次 5000+</span>
             </div>
             <div class="tag">
-              <van-tag type="danger" >米奇</van-tag>
+              <van-tag type="danger" >风景</van-tag>
               <van-tag type="danger" >年轻人</van-tag>
-              <van-tag type="danger" >标签三</van-tag>
+              <van-tag type="danger" >自然</van-tag>
             </div>
             <div class="item-pro">
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">苏堤春晓</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
+                  <span class="newamt sp">￥200</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">加勒比海盗</div>
+                <div class="names">云栖竹径</div>
                 <div>
-                  <span class="newamt sp">￥40.50</span>
+                  <span class="newamt sp">￥400</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">灵隐禅踪</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
+                  <span class="newamt sp">￥255</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="merchant-item">
+      <div class="merchant-item" @click="toMerchantInfo(3)">
         <div class="item-content">
           <img src="../../assets/jpg/dsn.jpg" alt="" />
           <div class="info">
-            <div class="name">上海迪士尼</div>
+            <div class="name">上海世纪公园</div>
             <div class="score">
               <van-icon name="star" />
-              <span class="num">4.9</span>
-              <span class="month">月玩人次 1000+</span>
+              <span class="num">5.0</span>
+              <span class="month">月玩人次 2000+</span>
             </div>
             <div class="tag">
-              <van-tag type="danger" >米奇</van-tag>
-              <van-tag type="danger" >年轻人</van-tag>
-              <van-tag type="danger" >标签三</van-tag>
+              <van-tag type="danger" >孩子</van-tag>
+              <van-tag type="danger" >活力</van-tag>
+              <van-tag type="danger" >欢乐</van-tag>
             </div>
             <div class="item-pro">
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
+                <div class="names">海盗船</div>
                 <div>
-                  <span class="newamt sp">￥25.50</span>
+                  <span class="newamt sp">￥80</span>
                 </div>
               </div>
               <div class="pros">
                 <img src="" alt="" />
-                <div class="names">加勒比海盗</div>
+                <div class="names">旋转木马</div>
                 <div>
-                  <span class="newamt sp">￥40.50</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="merchant-item">
-        <div class="item-content">
-          <img src="../../assets/jpg/dsn.jpg" alt="" />
-          <div class="info">
-            <div class="name">上海迪士尼</div>
-            <div class="score">
-              <van-icon name="star" />
-              <span class="num">4.9</span>
-              <span class="month">月玩人次 1000+</span>
-            </div>
-            <div class="tag">
-              <van-tag type="danger" >米奇</van-tag>
-              <van-tag type="danger" >年轻人</van-tag>
-              <van-tag type="danger" >标签三</van-tag>
-            </div>
-            <div class="item-pro">
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">加勒比海盗</div>
-                <div>
-                  <span class="newamt sp">￥40.50</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
-                </div>
-              </div>
-              <div class="pros">
-                <img src="" alt="" />
-                <div class="names">飞跃地平线</div>
-                <div>
-                  <span class="newamt sp">￥25.50</span>
-                  <span class="oldamt">30.00</span>
+                  <span class="newamt sp">￥30</span>
                 </div>
               </div>
             </div>

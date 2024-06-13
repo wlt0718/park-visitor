@@ -2,7 +2,7 @@ import router from './index.js'
 import { showConfirmDialog } from 'vant'
 // 需要登录才可以进入的页面
 const list = ['/success', '/myorder', '/path3']
-const token = true
+const token = false
 
 router.beforeEach((to, from, next) => {
   if (token) {

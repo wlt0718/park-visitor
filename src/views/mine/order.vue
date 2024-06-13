@@ -5,7 +5,6 @@ import { useRouter } from 'vue-router'
 console.log('page')
 const router = useRouter()
 const value1 = ref(0);
-const value2 = ref('a');
 const checkDate = ref('date')
 const canlendarShow = ref(false)
 const customDate = ref('')
@@ -32,11 +31,6 @@ const option1 = [
   { text: '上海迪士尼', value: 1 },
   { text: '上海欢乐谷', value: 2 },
 ];
-const option2 = [
-  { text: '全部项目', value: 'a' },
-  { text: '项目二', value: 'b' },
-  { text: '项目三', value: 'c' },
-];
 function toinfo(){
     router.push({
         name: 'orderinfo',
@@ -46,7 +40,6 @@ function toinfo(){
 <template>
 <van-dropdown-menu active-color="#ee0a24">
   <van-dropdown-item v-model="value1" :options="option1" />
-  <van-dropdown-item v-model="value2" :options="option2" />
   <van-dropdown-item v-model="checkDate" :options="dateList" @change="dateChange" />
 </van-dropdown-menu>
 <!-- 日期区间 -->

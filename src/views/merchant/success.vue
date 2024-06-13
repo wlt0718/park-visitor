@@ -1,9 +1,14 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useorderStore } from '../../stores/order.js'
+const useOrder = useorderStore()
 const router = useRouter()
 function next(){
   router.replace({
-    name: 'merchantInfo'
+    path: '/merchantInfo',
+    query: {
+      merchant: useOrder.merchant
+    }
   })
 }
 function tohome(){
