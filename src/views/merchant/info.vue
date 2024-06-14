@@ -190,7 +190,7 @@ function toOrder(){
     <img src="../../assets/jpg/dsn.jpg" alt="" />
   </div>
   <div class="main">
-    <div class="name">上海迪士尼</div>
+    <div class="name">{{ merchantData.merchantName }}</div>
     <div class="score">
       <van-icon name="star" />
       <span class="num">4.9</span>
